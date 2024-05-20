@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvwpslr35fqy3"]
+
+[ext_resource type="StyleBox" uid="uid://bg7uqy3w5e0tk" path="res://resource/generic.stylebox" id="1_ylpp8"]
+[ext_resource type="Script" path="res://script/widget/clock.gd" id="2_2qgcw"]
+[ext_resource type="FontFile" uid="uid://drgbasabdvfq" path="res://font/BebasNeue-Regular.ttf" id="2_3av3o"]
+[ext_resource type="FontFile" uid="uid://dhibeydk3b3a5" path="res://font/RobotoCondensed-Bold.ttf" id="3_glht2"]
+
+[sub_resource type="FontVariation" id="FontVariation_ob7yi"]
+base_font = ExtResource("2_3av3o")
+spacing_top = -15
+spacing_bottom = -40
+
+[sub_resource type="FontVariation" id="FontVariation_fh7pw"]
+base_font = ExtResource("2_3av3o")
+spacing_top = -16
+
+[sub_resource type="FontVariation" id="FontVariation_4u35h"]
+base_font = ExtResource("2_3av3o")
+spacing_top = -15
+spacing_bottom = -40
+
+[node name="Clock" type="PanelContainer"]
+self_modulate = Color(0.694118, 0.243137, 0.32549, 1)
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_ylpp8")
+script = ExtResource("2_2qgcw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Hour" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ob7yi")
+theme_override_font_sizes/font_size = 172
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 2.08165e-12)
+layout_mode = 2
+
+[node name="Blinker" type="Control" parent="MarginContainer/HBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/CenterContainer/Blinker"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -98.0
+offset_right = 16.5
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_fh7pw")
+theme_override_font_sizes/font_size = 172
+text = "."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="MarginContainer/HBoxContainer/CenterContainer/Blinker"]
+rotation = 3.14159
+
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/CenterContainer/Blinker/Node2D"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -69.5
+offset_right = 12.0
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_fh7pw")
+theme_override_font_sizes/font_size = 172
+text = "."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minute" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_4u35h")
+theme_override_font_sizes/font_size = 172
+text = "34"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Period" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_glht2")
+theme_override_font_sizes/font_size = 32
+text = "PM"
+vertical_alignment = 1

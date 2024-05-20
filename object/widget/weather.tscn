@@ -1,0 +1,166 @@
+[gd_scene load_steps=19 format=3 uid="uid://cwbsr3fl447dt"]
+
+[ext_resource type="StyleBox" uid="uid://bg7uqy3w5e0tk" path="res://resource/generic.stylebox" id="1_7pwkq"]
+[ext_resource type="Script" path="res://script/widget/weather.gd" id="2_lgpkg"]
+[ext_resource type="Texture2D" uid="uid://c4q6uiqhaaguc" path="res://image/icon/map-marker-outline-custom.png" id="2_moa5r"]
+[ext_resource type="Texture2D" uid="uid://cht5xw7ipcteq" path="res://image/weather/weather-sunny-custom.png" id="3_f8hfk"]
+[ext_resource type="FontFile" uid="uid://dsdiyhd717i2v" path="res://font/RobotoCondensed-Regular.ttf" id="3_yhxa2"]
+[ext_resource type="FontFile" uid="uid://dhibeydk3b3a5" path="res://font/RobotoCondensed-Bold.ttf" id="4_f0qcj"]
+[ext_resource type="Texture2D" uid="uid://rwri5xane3eh" path="res://image/weather/weather-cloudy-custom.png" id="5_irwfx"]
+[ext_resource type="Texture2D" uid="uid://bxnsok26s2m5o" path="res://image/weather/weather-partly-cloudy-custom.png" id="5_wktld"]
+[ext_resource type="Texture2D" uid="uid://cvv2mehvqrai4" path="res://image/weather/weather-fog-custom.png" id="6_qqxpm"]
+[ext_resource type="Texture2D" uid="uid://5bgyvlauhene" path="res://image/weather/weather-snowy-custom.png" id="7_jk41g"]
+[ext_resource type="Texture2D" uid="uid://bqprepsbloarn" path="res://image/weather/weather-rainy-custom.png" id="8_yunif"]
+[ext_resource type="Texture2D" uid="uid://jslgikldtql4" path="res://image/weather/weather-snowy-rainy-custom.png" id="9_7hkvo"]
+[ext_resource type="Texture2D" uid="uid://vguxeihldn3n" path="res://image/weather/weather-partly-snowy-rainy-custom.png" id="9_vkw02"]
+[ext_resource type="Texture2D" uid="uid://dphb2i1lmyx6r" path="res://image/weather/weather-partly-rainy-custom.png" id="10_yu60y"]
+[ext_resource type="Texture2D" uid="uid://cqcdqfq7npi27" path="res://image/weather/weather-partly-snowy-custom.png" id="11_ifre1"]
+[ext_resource type="Texture2D" uid="uid://cddjniscvihc4" path="res://image/weather/weather-lightning-custom.png" id="12_45w4d"]
+[ext_resource type="Texture2D" uid="uid://c2sbmbqt6x7t0" path="res://image/weather/weather-hail-custom.png" id="14_lrgvw"]
+
+[sub_resource type="FontVariation" id="FontVariation_0y63q"]
+base_font = ExtResource("4_f0qcj")
+spacing_top = -10
+spacing_bottom = -20
+
+[node name="Weather" type="PanelContainer"]
+self_modulate = Color(0.231373, 0.364706, 0.788235, 1)
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_7pwkq")
+script = ExtResource("2_lgpkg")
+wmo_weather_image = {
+0: ExtResource("3_f8hfk"),
+1: ExtResource("3_f8hfk"),
+2: ExtResource("5_wktld"),
+3: ExtResource("5_irwfx"),
+45: ExtResource("6_qqxpm"),
+48: ExtResource("7_jk41g"),
+51: ExtResource("10_yu60y"),
+53: ExtResource("10_yu60y"),
+55: ExtResource("10_yu60y"),
+56: ExtResource("9_vkw02"),
+57: ExtResource("9_vkw02"),
+61: ExtResource("8_yunif"),
+63: ExtResource("8_yunif"),
+65: ExtResource("8_yunif"),
+66: ExtResource("9_7hkvo"),
+67: ExtResource("9_7hkvo"),
+71: ExtResource("7_jk41g"),
+73: ExtResource("7_jk41g"),
+75: ExtResource("7_jk41g"),
+77: ExtResource("7_jk41g"),
+80: ExtResource("10_yu60y"),
+81: ExtResource("10_yu60y"),
+82: ExtResource("10_yu60y"),
+85: ExtResource("11_ifre1"),
+86: ExtResource("11_ifre1"),
+95: ExtResource("12_45w4d"),
+96: ExtResource("14_lrgvw"),
+99: ExtResource("14_lrgvw")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+texture = ExtResource("2_moa5r")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Location" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_yhxa2")
+theme_override_font_sizes/font_size = 16
+text = "London"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Temperature" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_0y63q")
+theme_override_font_sizes/font_size = 80
+text = "32"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer/MarginContainer/HBoxContainer"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_f0qcj")
+theme_override_font_sizes/font_size = 48
+text = "°"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_f0qcj")
+theme_override_font_sizes/font_size = 48
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("5_wktld")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_yhxa2")
+theme_override_font_sizes/font_size = 16
+text = "Partly Cloudy"
+horizontal_alignment = 1
+vertical_alignment = 1

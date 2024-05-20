@@ -1,0 +1,49 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Metro Clock"
+config/description="Display clock inspired by metro design."
+config/version="0.0.0"
+run/main_scene="res://scene/main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="catmeowbyte/metro_clock"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+run/max_fps=30
+run/low_processor_mode=true
+run/low_processor_mode_sleep_usec=27600
+config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalConfig="*res://script/global/global_config.gd"
+GlobalWeather="*res://script/global/global_weather.gd"
+GlobalDate="*res://script/global/global_date.gd"
+GlobalTime="*res://script/global/global_time.gd"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
+
+[input]
+
+debug_1={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":49,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://45rjmsp0hq40"]
+
+[ext_resource type="Script" path="res://script/scene/running_text.gd" id="1_lp7nd"]
+[ext_resource type="PackedScene" uid="uid://vkddnsyd0ku1" path="res://object/component/running_text_label.tscn" id="2_yurn2"]
+
+[node name="RunningText" type="Control"]
+custom_minimum_size = Vector2(2.08165e-12, 64)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_lp7nd")
+text_object = ExtResource("2_yurn2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.109804, 0.172549, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="TextBox" type="HBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RunningTextLabel" parent="ScrollContainer/TextBox" instance=ExtResource("2_yurn2")]
+layout_mode = 2

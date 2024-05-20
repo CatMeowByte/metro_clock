@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://l2glpsv24qys"]
+
+[ext_resource type="Script" path="res://Script/component/hour_station.gd" id="1_673p6"]
+[ext_resource type="Texture2D" uid="uid://hikk2fpf2hnv" path="res://image/icon/circle-custom.png" id="1_xp1ke"]
+[ext_resource type="FontFile" uid="uid://dhibeydk3b3a5" path="res://font/RobotoCondensed-Bold.ttf" id="3_7jlsq"]
+
+[node name="HourStation" type="CenterContainer"]
+script = ExtResource("1_673p6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="Circle" type="Node2D" parent="Control"]
+unique_name_in_owner = true
+scale = Vector2(0.3, 0.3)
+
+[node name="Outline" type="Sprite2D" parent="Control/Circle"]
+unique_name_in_owner = true
+self_modulate = Color(0.937255, 0.490196, 0.341176, 1)
+texture = ExtResource("1_xp1ke")
+
+[node name="Fill" type="Sprite2D" parent="Control/Circle"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_xp1ke")
+
+[node name="Number" type="Label" parent="Control"]
+unique_name_in_owner = true
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 30.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_7jlsq")
+theme_override_font_sizes/font_size = 32
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1

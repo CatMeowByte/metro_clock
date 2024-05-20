@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5aukoktn76qd"]
+
+[ext_resource type="PackedScene" uid="uid://b3feaj3u8cqwh" path="res://scene/heads_up_display.tscn" id="1_5cdse"]
+[ext_resource type="PackedScene" uid="uid://dde425af0pcsu" path="res://scene/now.tscn" id="5_ujfaf"]
+[ext_resource type="Shader" path="res://shader/noise.gdshader" id="6_282ch"]
+[ext_resource type="Script" path="res://script/component/noise.gd" id="6_bm0fi"]
+[ext_resource type="PackedScene" uid="uid://dc6dkginh3cj5" path="res://object/widget/station.tscn" id="6_kqgg3"]
+[ext_resource type="PackedScene" uid="uid://dqvy4sewcyno7" path="res://scene/setting.tscn" id="6_t67if"]
+[ext_resource type="PackedScene" uid="uid://cwm31hmb87vly" path="res://scene/marker_pointer.tscn" id="7_dp8lm"]
+[ext_resource type="PackedScene" uid="uid://45rjmsp0hq40" path="res://scene/running_text.tscn" id="8_t6hb1"]
+[ext_resource type="Texture2D" uid="uid://dktqy4vw2euqg" path="res://image/sweetie-16-1x.png" id="8_uk66e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ba1os"]
+shader = ExtResource("6_282ch")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.956863, 0.956863, 0.956863, 1)
+
+[node name="Widget" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="HeadsUpDisplay" parent="Widget" instance=ExtResource("1_5cdse")]
+layout_mode = 2
+
+[node name="Station" parent="Widget" instance=ExtResource("6_kqgg3")]
+layout_mode = 2
+
+[node name="MarkerPointer" parent="Widget" instance=ExtResource("7_dp8lm")]
+layout_mode = 2
+
+[node name="RunningText" parent="Widget" instance=ExtResource("8_t6hb1")]
+layout_mode = 2
+
+[node name="Now" parent="." instance=ExtResource("5_ujfaf")]
+visible = false
+layout_mode = 1
+
+[node name="Setting" parent="." instance=ExtResource("6_t67if")]
+layout_mode = 1
+
+[node name="Noise" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_ba1os")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_bm0fi")
+
+[node name="Palette" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(473, -51)
+scale = Vector2(64, 64)
+texture = ExtResource("8_uk66e")

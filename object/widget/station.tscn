@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc6dkginh3cj5"]
+
+[ext_resource type="Texture2D" uid="uid://hikk2fpf2hnv" path="res://image/icon/circle-custom.png" id="1_70whb"]
+[ext_resource type="Script" path="res://script/widget/station.gd" id="1_wcrkt"]
+[ext_resource type="PackedScene" uid="uid://l2glpsv24qys" path="res://object/component/hour_station.tscn" id="2_5bcfi"]
+
+[node name="Station" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_wcrkt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.337255, 0.423529, 0.52549, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="Node2D" type="Node2D" parent="VBoxContainer/HBoxContainer/CenterContainer/Control"]
+scale = Vector2(0.15, 0.15)
+
+[node name="Outline" type="Sprite2D" parent="VBoxContainer/HBoxContainer/CenterContainer/Control/Node2D"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+texture = ExtResource("1_70whb")
+
+[node name="Fill" type="Sprite2D" parent="VBoxContainer/HBoxContainer/CenterContainer/Control/Node2D"]
+self_modulate = Color(0.937255, 0.490196, 0.341176, 1)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_70whb")
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.937255, 0.490196, 0.341176, 1)
+
+[node name="StationScroll" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+clip_contents = false
+custom_minimum_size = Vector2(2.08165e-12, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+scroll_horizontal = 100
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StationScroll"]
+custom_minimum_size = Vector2(1200, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_constants/separation = 0
+
+[node name="HourStationB2" parent="StationScroll/HBoxContainer" instance=ExtResource("2_5bcfi")]
+unique_name_in_owner = true
+layout_mode = 2
+color = Color(0.337255, 0.423529, 0.52549, 1)
+
+[node name="Control" type="Control" parent="StationScroll/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HourStationB1" parent="StationScroll/HBoxContainer" instance=ExtResource("2_5bcfi")]
+unique_name_in_owner = true
+layout_mode = 2
+color = Color(0.337255, 0.423529, 0.52549, 1)
+
+[node name="Control2" type="Control" parent="StationScroll/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HourStationF0" parent="StationScroll/HBoxContainer" instance=ExtResource("2_5bcfi")]
+unique_name_in_owner = true
+layout_mode = 2
+color = Color(0.337255, 0.423529, 0.52549, 1)
+
+[node name="Control3" type="Control" parent="StationScroll/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HourStationF1" parent="StationScroll/HBoxContainer" instance=ExtResource("2_5bcfi")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="StationScroll/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HourStationF2" parent="StationScroll/HBoxContainer" instance=ExtResource("2_5bcfi")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="StationScroll/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HourStationF3" parent="StationScroll/HBoxContainer" instance=ExtResource("2_5bcfi")]
+unique_name_in_owner = true
+layout_mode = 2

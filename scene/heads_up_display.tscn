@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3feaj3u8cqwh"]
+
+[ext_resource type="StyleBox" uid="uid://bg7uqy3w5e0tk" path="res://resource/generic.stylebox" id="1_wu6bp"]
+[ext_resource type="PackedScene" uid="uid://dvwpslr35fqy3" path="res://object/widget/clock.tscn" id="2_dn5ps"]
+[ext_resource type="PackedScene" uid="uid://cuxqmqjkduk5h" path="res://object/widget/date_complex.tscn" id="3_s8hv5"]
+[ext_resource type="PackedScene" uid="uid://cwbsr3fl447dt" path="res://object/widget/weather.tscn" id="4_nem76"]
+[ext_resource type="Texture2D" uid="uid://cu4tnncdu8ojt" path="res://image/icon/triangle-custom.png" id="5_g2wpr"]
+
+[node name="HeadsUpDisplay" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_wu6bp")
+
+[node name="HBoxContainer" type="HSplitContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+dragger_visibility = 1
+
+[node name="VBoxContainer" type="VSplitContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+dragger_visibility = 1
+
+[node name="Clock" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_dn5ps")]
+self_modulate = Color(0.2, 0.235294, 0.341176, 1)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VSplitContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+dragger_visibility = 1
+
+[node name="DateComplex" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("3_s8hv5")]
+self_modulate = Color(0.2, 0.235294, 0.341176, 1)
+layout_mode = 2
+
+[node name="Weather" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("4_nem76")]
+self_modulate = Color(0.2, 0.235294, 0.341176, 1)
+layout_mode = 2
+
+[node name="Triangle" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Triangle"]
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
+scale = Vector2(0.18, -0.1)
+texture = ExtResource("5_g2wpr")
+offset = Vector2(2.08165e-12, -96)

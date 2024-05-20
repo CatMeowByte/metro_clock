@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://4pteewkdt8mr"]
+
+[ext_resource type="StyleBox" uid="uid://bg7uqy3w5e0tk" path="res://resource/generic.stylebox" id="1_64oyb"]
+[ext_resource type="FontFile" uid="uid://dhibeydk3b3a5" path="res://font/RobotoCondensed-Bold.ttf" id="2_w5ytw"]
+[ext_resource type="FontFile" uid="uid://dsdiyhd717i2v" path="res://font/RobotoCondensed-Regular.ttf" id="3_ipfv7"]
+
+[sub_resource type="FontVariation" id="FontVariation_46gwi"]
+base_font = ExtResource("2_w5ytw")
+spacing_top = -15
+spacing_bottom = -15
+
+[node name="DateSimple" type="PanelContainer"]
+self_modulate = Color(0.219608, 0.717647, 0.392157, 1)
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_64oyb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w5ytw")
+theme_override_font_sizes/font_size = 32
+text = "Sunday"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ipfv7")
+theme_override_font_sizes/font_size = 24
+text = "December"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_46gwi")
+theme_override_font_sizes/font_size = 88
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1

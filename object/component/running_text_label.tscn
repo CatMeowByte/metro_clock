@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://vkddnsyd0ku1"]
+
+[ext_resource type="FontFile" uid="uid://dsdiyhd717i2v" path="res://font/RobotoCondensed-Regular.ttf" id="1_yfuyq"]
+
+[node name="RunningTextLabel" type="Label"]
+theme_override_fonts/font = ExtResource("1_yfuyq")
+theme_override_font_sizes/font_size = 32
+text = "The quick brown fox jumps over the lazy dog."
+horizontal_alignment = 2
+vertical_alignment = 1

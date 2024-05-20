@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=3 uid="uid://vvhmimeq3q5u"]
+
+[ext_resource type="Script" path="res://Script/component/marker.gd" id="1_r4v4g"]
+[ext_resource type="Texture2D" uid="uid://cu4tnncdu8ojt" path="res://image/icon/triangle-custom.png" id="2_uab4o"]
+[ext_resource type="StyleBox" uid="uid://bg7uqy3w5e0tk" path="res://resource/generic.stylebox" id="3_cgfcc"]
+[ext_resource type="FontFile" uid="uid://dhibeydk3b3a5" path="res://font/RobotoCondensed-Bold.ttf" id="4_0nbm8"]
+[ext_resource type="FontFile" uid="uid://dsdiyhd717i2v" path="res://font/RobotoCondensed-Regular.ttf" id="5_v4qx6"]
+
+[node name="Marker" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r4v4g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_right = 85.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="PointerLeft" type="Control" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/PointerLeft"]
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+rotation = -1.5708
+scale = Vector2(0.09, 0.05)
+texture = ExtResource("2_uab4o")
+offset = Vector2(2.08165e-12, -96)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="PointerUp" type="Control" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/VBoxContainer/PointerUp"]
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+scale = Vector2(0.09, 0.05)
+texture = ExtResource("2_uab4o")
+offset = Vector2(2.08165e-12, -96)
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_cgfcc")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Event" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_0nbm8")
+theme_override_font_sizes/font_size = 24
+text = "Maghrib"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Time" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_v4qx6")
+theme_override_font_sizes/font_size = 16
+text = "12:34 PM"
+vertical_alignment = 1
+
+[node name="Duration" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_v4qx6")
+theme_override_font_sizes/font_size = 16
+text = "5 Min Ago"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PointerRight" type="Control" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/PointerRight"]
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+rotation = 1.5708
+scale = Vector2(0.09, 0.05)
+texture = ExtResource("2_uab4o")
+offset = Vector2(2.08165e-12, -96)
