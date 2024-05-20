@@ -45,12 +45,13 @@ func button_update():
 
 	# State
 	%State.visible = not geocode_country.states.is_empty()
+	%City.visible = %State.visible
 	if %State.visible:
 		button = %State/OptionButton
 		button.clear()
 		for state in geocode_country.states:
 			button.add_item(state.name)
-		button.select(min(GlobalConfig.location_state_id, button.item_count - 1))
+		button.select(GlobalConfig.location_state_id)
 		var geocode_state = geocode_country.states[button.get_selected_id()]
 
 		# City
@@ -60,7 +61,7 @@ func button_update():
 			button.clear()
 			for city in geocode_state.cities:
 				button.add_item(city.name)
-			button.select(min(GlobalConfig.location_city_id, button.item_count - 1))
+			button.select(GlobalConfig.location_city_id)
 
 
 func panel_show():

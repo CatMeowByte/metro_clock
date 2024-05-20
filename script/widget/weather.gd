@@ -71,10 +71,10 @@ func _on_weather_updated():
 	var geocode_country = GlobalWeather.geocode[GlobalConfig.location_country_id].country
 	var location_name = geocode_country.name
 	if geocode_country.states:
-		var geocode_state = geocode_country.states[GlobalConfig.location_state_id]
+		var geocode_state = geocode_country.states[wrap(GlobalConfig.location_state_id, 0, geocode_country.states.size())]
 		location_name = geocode_state.name
 		if geocode_state.cities:
-			var geocode_city = geocode_state.cities[GlobalConfig.location_city_id]
+			var geocode_city = geocode_state.cities[wrap(GlobalConfig.location_city_id, 0, geocode_state.cities.size())]
 			location_name = geocode_city.name + ", " + location_name
 
 	%Location.text = location_name
