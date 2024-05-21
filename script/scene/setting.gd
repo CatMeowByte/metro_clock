@@ -78,5 +78,9 @@ func _on_button_pressed(value):
 	button_update()
 
 
+func _on_button_setting_pressed():
+	panel_show()
+
+
 func _on_button_close_pressed():
 	panel_hide()

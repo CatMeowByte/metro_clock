@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5aukoktn76qd"]
+[gd_scene load_steps=12 format=3 uid="uid://c5aukoktn76qd"]
 
 [ext_resource type="PackedScene" uid="uid://b3feaj3u8cqwh" path="res://scene/heads_up_display.tscn" id="1_5cdse"]
 [ext_resource type="PackedScene" uid="uid://dde425af0pcsu" path="res://scene/now.tscn" id="5_ujfaf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://script/component/noise.gd" id="6_bm0fi"]
 [ext_resource type="PackedScene" uid="uid://dc6dkginh3cj5" path="res://object/widget/station.tscn" id="6_kqgg3"]
 [ext_resource type="PackedScene" uid="uid://dqvy4sewcyno7" path="res://scene/setting.tscn" id="6_t67if"]
+[ext_resource type="PackedScene" uid="uid://dnosl5ehwn4hr" path="res://object/component/overlay_button.tscn" id="7_d2km5"]
 [ext_resource type="PackedScene" uid="uid://cwm31hmb87vly" path="res://scene/marker_pointer.tscn" id="7_dp8lm"]
 [ext_resource type="PackedScene" uid="uid://45rjmsp0hq40" path="res://scene/running_text.tscn" id="8_t6hb1"]
 [ext_resource type="Texture2D" uid="uid://dktqy4vw2euqg" path="res://image/sweetie-16-1x.png" id="8_uk66e"]
@@ -49,8 +50,13 @@ layout_mode = 2
 [node name="MarkerPointer" parent="Widget" instance=ExtResource("7_dp8lm")]
 layout_mode = 2
 
-[node name="RunningText" parent="Widget" instance=ExtResource("8_t6hb1")]
+[node name="Placeholder" type="Control" parent="Widget"]
+custom_minimum_size = Vector2(2.08165e-12, 64)
 layout_mode = 2
+
+[node name="RunningText" parent="." instance=ExtResource("8_t6hb1")]
+layout_mode = 1
+offset_top = -64.0
 
 [node name="Now" parent="." instance=ExtResource("5_ujfaf")]
 visible = false
@@ -58,6 +64,15 @@ layout_mode = 1
 
 [node name="Setting" parent="." instance=ExtResource("6_t67if")]
 layout_mode = 1
+
+[node name="OverlayButton" parent="." instance=ExtResource("7_d2km5")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
 
 [node name="Noise" type="ColorRect" parent="."]
 visible = false
@@ -75,3 +90,5 @@ texture_filter = 1
 position = Vector2(473, -51)
 scale = Vector2(64, 64)
 texture = ExtResource("8_uk66e")
+
+[connection signal="setting_pressed" from="OverlayButton" to="Setting" method="_on_button_setting_pressed"]
