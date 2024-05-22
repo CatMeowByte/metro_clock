@@ -1,17 +1,36 @@
 extends Control
 
+@export var footer_notify_time: float = 5.0
+
 func _ready():
+	button_update()
+
+	%Footer/Notifier.visible = false
+	%Footer/Button.visible = true
+
+	visible = true
+	position.y = -get_viewport_rect().size.y
+
+
+func setting_update():
+	data_update()
 	button_update()
 
 
 func data_update():
 	# Debug
-	#GlobalConfig.debug_fake_api = %Country/OptionButton.get_selected_id()
-	#debug_time_travel = config.get_value(section, "debug_time_travel", false)
-	#debug_time_travel_speed = config.get_value(section, "debug_time_travel_speed", 2000)
+	GlobalConfig.debug_fake_api = %FakeAPI/CheckBox.is_pressed()
+	GlobalConfig.debug_time_travel = %TimeTravel/CheckBox.is_pressed()
+	GlobalConfig.debug_time_travel_speed = %TimeTravel/SpinBox.get_value()
+
+	# Theme
+	for child in %ColorAccent.get_children():
+		if child.button_pressed:
+			GlobalConfig.theme_color_accent = child.self_modulate
+	GlobalConfig.theme_mode_dark = %ModeDark/CheckBox.is_pressed()
 
 	# Time
-	#GlobalConfig.time_12 = %Country/OptionButton.get_selected_id()
+	GlobalConfig.hour_12 = %Hour12/CheckBox.is_pressed()
 
 	# Geocode
 	GlobalConfig.location_country_id = %Country/OptionButton.get_selected_id()
@@ -19,18 +38,69 @@ func data_update():
 	GlobalConfig.location_city_id = %City/OptionButton.get_selected_id()
 
 	# Running Text
-	#running_text_scroll_speed = config.get_value(section, "running_text_scroll_speed", 128)
-	#running_text =
+	GlobalConfig.running_text_scroll_speed = %RunningSpeed/SpinBox.get_value()
+
+	# Strip redundant newline
+	GlobalConfig.running_text = []
+	var array_text = %RunningText/TextEdit.text.split("\n")
+	for text in array_text:
+		if text:
+			GlobalConfig.running_text.append(text)
 
 	# Anti burn-in noise
-	#noise_stability = config.get_value(section, "noise_stability", 2000)
-	#noise_duration = config.get_value(section, "noise_duration", 5.0)
+	GlobalConfig.noise_stability = %NoiseStability/SpinBox.get_value()
+	GlobalConfig.noise_duration = %NoiseDuration/SpinBox.get_value()
+
+	GlobalConfig.emit_signal("setting_updated")
 
 
 func button_update():
-	# Reference
-	var geocode = GlobalWeather.geocode
+	# Reusable current button
 	var button
+
+	#region Debug
+	# Fake API
+	button = %FakeAPI/CheckBox
+	button.button_pressed = GlobalConfig.debug_fake_api
+
+	# Time Travel
+	button = %TimeTravel/CheckBox
+	button.button_pressed = GlobalConfig.debug_time_travel
+	button = %TimeTravel/SpinBox
+	button.set_value_no_signal(GlobalConfig.debug_time_travel_speed)
+	#endregion
+
+	#region Theme
+	# Color Accent
+	button = %ColorAccent
+	for child in button.get_children():
+		if not child.pressed.is_connected(_on_button_pressed):
+			child.pressed.connect(_on_button_pressed)
+		child.button_pressed = child.self_modulate == GlobalConfig.theme_color_accent
+
+	# Dark Mode
+	button = %ModeDark/CheckBox
+	button.button_pressed = GlobalConfig.theme_mode_dark
+	#endregion
+
+	#region Time
+	# Hour 12
+	button = %Hour12/CheckBox
+	button.button_pressed = GlobalConfig.hour_12
+	#endregion
+
+	#region Running Text
+	# Speed
+	button = %RunningSpeed/SpinBox
+	button.set_value_no_signal(GlobalConfig.running_text_scroll_speed)
+
+	# Text
+	button = %RunningText/TextEdit
+	button.text = "\n".join(GlobalConfig.running_text)
+	#endregion
+
+	#region Geocode
+	var geocode = GlobalWeather.geocode # Reference
 
 	# Country
 	button = %Country/OptionButton
@@ -62,25 +132,60 @@ func button_update():
 			for city in geocode_state.cities:
 				button.add_item(city.name)
 			button.select(GlobalConfig.location_city_id)
+	#endregion
+
+	#region Noise
+	# Stability
+	button = %NoiseStability/SpinBox
+	button.set_value_no_signal(GlobalConfig.noise_stability)
+
+	# Duration
+	button = %NoiseDuration/SpinBox
+	button.set_value_no_signal(GlobalConfig.noise_duration)
+	#endregion
+
+	print("button updated")
 
 
-func panel_show():
-	visible = true
+func footer_pressed(text: String):
+	%Footer/Notifier.text = "Settings " + text
+	%Footer/Notifier.visible = true
+	%Footer/Button.visible = false
+	await get_tree().create_timer(footer_notify_time).timeout
+	%Footer/Notifier.visible = false
+	%Footer/Button.visible = true
 
 
-func panel_hide():
-	visible = false
+func _on_focus_exited():
+	setting_update()
 
 
-func _on_button_pressed(value):
+func _on_button_value_pressed(value):
 	print("button pressed value is ", value)
-	data_update()
+	setting_update()
+
+
+func _on_button_pressed():
+	setting_update()
+
+
+func _on_interface_setting_pressed():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position:y", 0, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+
+
+func _on_interface_close_pressed():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position:y", -get_viewport_rect().size.y, 0.5).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUINT)
+
+
+func _on_interface_reset_pressed():
+	GlobalConfig.config_set(true)
 	button_update()
+	footer_pressed("Reset!")
 
 
-func _on_button_setting_pressed():
-	panel_show()
-
-
-func _on_button_close_pressed():
-	panel_hide()
+func _on_interface_save_pressed():
+	GlobalConfig.config_save()
+	button_update()
+	footer_pressed("Saved!")

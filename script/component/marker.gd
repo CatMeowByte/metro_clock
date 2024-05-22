@@ -6,6 +6,10 @@ enum pointer_side {UP, LEFT, RIGHT}
 @export var target_position: int = 0:
 	set(value):
 		target_position = value
+
+		if not is_node_ready():
+			await ready
+
 		update_position(target_position)
 
 
@@ -23,7 +27,7 @@ func update_position(value):
 	position.x = clamp(
 		value,
 		margin,
-		ProjectSettings.get_setting("display/window/size/viewport_width") - margin
+		get_viewport_rect().size.x - margin
 	)
 
 	# Pointer direction

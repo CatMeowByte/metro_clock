@@ -38,7 +38,7 @@ func _process(delta):
 
 	# Debug
 	if GlobalConfig.debug_time_travel:
-		system_time = Time.get_time_dict_from_unix_time(debug_unix_time)
+		system_time = Time.get_time_dict_from_unix_time(int(debug_unix_time))
 		debug_unix_time += delta * GlobalConfig.debug_time_travel_speed
 
 	if not t.hour == system_time.hour:
@@ -50,11 +50,6 @@ func _process(delta):
 	if not t.second == system_time.second:
 		t.second = system_time.second
 		emit_signal("second_updated")
-
-
-#func _input(event):
-		#if Input.is_action_just_released("debug_1"):
-			#emit_signal("marker_triggered", "earlynight")
 
 
 # Convert to 12H format

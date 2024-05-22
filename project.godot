@@ -18,8 +18,6 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="catmeowbyte/metro_clock"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=30
-run/low_processor_mode=true
-run/low_processor_mode_sleep_usec=27600
 config/icon="res://icon.svg"
 
 [autoload]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://vvhmimeq3q5u"]
+[gd_scene load_steps=7 format=3 uid="uid://vvhmimeq3q5u"]
 
 [ext_resource type="Script" path="res://Script/component/marker.gd" id="1_r4v4g"]
 [ext_resource type="Texture2D" uid="uid://cu4tnncdu8ojt" path="res://image/icon/triangle-custom.png" id="2_uab4o"]
 [ext_resource type="StyleBox" uid="uid://bg7uqy3w5e0tk" path="res://resource/generic.stylebox" id="3_cgfcc"]
+[ext_resource type="Script" path="res://script/component/theme_mode_dark_self_modulate.gd" id="3_y4ep4"]
 [ext_resource type="FontFile" uid="uid://dhibeydk3b3a5" path="res://font/RobotoCondensed-Bold.ttf" id="4_0nbm8"]
 [ext_resource type="FontFile" uid="uid://dsdiyhd717i2v" path="res://font/RobotoCondensed-Regular.ttf" id="5_v4qx6"]
 
@@ -34,6 +35,9 @@ rotation = -1.5708
 scale = Vector2(0.09, 0.05)
 texture = ExtResource("2_uab4o")
 offset = Vector2(2.08165e-12, -96)
+script = ExtResource("3_y4ep4")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -51,11 +55,17 @@ self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 scale = Vector2(0.09, 0.05)
 texture = ExtResource("2_uab4o")
 offset = Vector2(2.08165e-12, -96)
+script = ExtResource("3_y4ep4")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
 self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("3_cgfcc")
+script = ExtResource("3_y4ep4")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -113,3 +123,6 @@ rotation = 1.5708
 scale = Vector2(0.09, 0.05)
 texture = ExtResource("2_uab4o")
 offset = Vector2(2.08165e-12, -96)
+script = ExtResource("3_y4ep4")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.2, 0.235294, 0.341176, 1)

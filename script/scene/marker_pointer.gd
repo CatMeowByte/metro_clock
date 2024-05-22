@@ -1,4 +1,4 @@
-extends Node
+extends Control
 
 const EVENT_NAME: Dictionary = {
 	"fajr" : "Fajr",
@@ -21,7 +21,7 @@ func _ready():
 
 
 func _on_minute_updated():
-	var view_width = ProjectSettings.get_setting("display/window/size/viewport_width")
+	var view_width = get_viewport_rect().size.x
 	var view_center = view_width / 2
 
 	# Get previous and next marker

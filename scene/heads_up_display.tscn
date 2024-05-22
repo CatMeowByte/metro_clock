@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3feaj3u8cqwh"]
+[gd_scene load_steps=7 format=3 uid="uid://b3feaj3u8cqwh"]
 
-[ext_resource type="StyleBox" uid="uid://bg7uqy3w5e0tk" path="res://resource/generic.stylebox" id="1_wu6bp"]
+[ext_resource type="Script" path="res://script/component/theme_mode_dark_self_modulate.gd" id="1_a1h5d"]
 [ext_resource type="PackedScene" uid="uid://dvwpslr35fqy3" path="res://object/widget/clock.tscn" id="2_dn5ps"]
 [ext_resource type="PackedScene" uid="uid://cuxqmqjkduk5h" path="res://object/widget/date_complex.tscn" id="3_s8hv5"]
 [ext_resource type="PackedScene" uid="uid://cwbsr3fl447dt" path="res://object/widget/weather.tscn" id="4_nem76"]
 [ext_resource type="Texture2D" uid="uid://cu4tnncdu8ojt" path="res://image/icon/triangle-custom.png" id="5_g2wpr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1n40u"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
 
 [node name="HeadsUpDisplay" type="MarginContainer"]
 anchors_preset = 15
@@ -25,7 +33,10 @@ theme_override_constants/separation = 0
 self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = ExtResource("1_wu6bp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_1n40u")
+script = ExtResource("1_a1h5d")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
 
 [node name="HBoxContainer" type="HSplitContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -66,3 +77,6 @@ self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 scale = Vector2(0.18, -0.1)
 texture = ExtResource("5_g2wpr")
 offset = Vector2(2.08165e-12, -96)
+script = ExtResource("1_a1h5d")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)

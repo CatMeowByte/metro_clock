@@ -1,4 +1,4 @@
-extends Node
+extends Control
 
 
 func _ready():
@@ -17,5 +17,5 @@ func _on_hour_updated():
 
 
 func _on_minute_updated():
-	var project_width = ProjectSettings.get_setting("display/window/size/viewport_width")
+	var project_width = get_viewport_rect().size.x
 	%StationScroll.scroll_horizontal = (GlobalTime.t.minute / 60.0) * (project_width / 4)
