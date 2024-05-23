@@ -31,14 +31,12 @@ custom_minimum_size = Vector2(2.08165e-12, 32)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
-self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
+[node name="ColorRect1" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+self_modulate = Color(0.937255, 0.490196, 0.341176, 1)
 show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_s3yop")
-color_light = Color(0.337255, 0.423529, 0.52549, 1)
-color_dark = Color(0.580392, 0.690196, 0.760784, 1)
+script = ExtResource("3_eymn1")
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -63,11 +61,13 @@ texture = ExtResource("1_70whb")
 script = ExtResource("3_10g0q")
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
-self_modulate = Color(0.937255, 0.490196, 0.341176, 1)
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("3_eymn1")
+script = ExtResource("2_s3yop")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
 
 [node name="StationScroll" type="ScrollContainer" parent="."]
 unique_name_in_owner = true
@@ -95,12 +95,6 @@ theme_override_constants/separation = 0
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Outline" parent="StationScroll/HBoxContainer/HourStationB2/Control/Circle" index="0"]
-self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
-script = ExtResource("2_s3yop")
-color_light = Color(0.337255, 0.423529, 0.52549, 1)
-color_dark = Color(0.580392, 0.690196, 0.760784, 1)
-
 [node name="Control" type="Control" parent="StationScroll/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -108,12 +102,6 @@ size_flags_horizontal = 3
 [node name="HourStationB1" parent="StationScroll/HBoxContainer" instance=ExtResource("2_5bcfi")]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="Outline" parent="StationScroll/HBoxContainer/HourStationB1/Control/Circle" index="0"]
-self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
-script = ExtResource("2_s3yop")
-color_light = Color(0.337255, 0.423529, 0.52549, 1)
-color_dark = Color(0.580392, 0.690196, 0.760784, 1)
 
 [node name="Control2" type="Control" parent="StationScroll/HBoxContainer"]
 layout_mode = 2
@@ -123,12 +111,6 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Outline" parent="StationScroll/HBoxContainer/HourStationF0/Control/Circle" index="0"]
-self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
-script = ExtResource("2_s3yop")
-color_light = Color(0.337255, 0.423529, 0.52549, 1)
-color_dark = Color(0.580392, 0.690196, 0.760784, 1)
-
 [node name="Control3" type="Control" parent="StationScroll/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -136,6 +118,12 @@ size_flags_horizontal = 3
 [node name="HourStationF1" parent="StationScroll/HBoxContainer" instance=ExtResource("2_5bcfi")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="Outline" parent="StationScroll/HBoxContainer/HourStationF1/Control/Circle" index="0"]
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
+script = ExtResource("2_s3yop")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
 
 [node name="Control4" type="Control" parent="StationScroll/HBoxContainer"]
 layout_mode = 2
@@ -145,6 +133,12 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="Outline" parent="StationScroll/HBoxContainer/HourStationF2/Control/Circle" index="0"]
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
+script = ExtResource("2_s3yop")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
+
 [node name="Control5" type="Control" parent="StationScroll/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -153,6 +147,12 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 
-[editable path="StationScroll/HBoxContainer/HourStationB2"]
-[editable path="StationScroll/HBoxContainer/HourStationB1"]
-[editable path="StationScroll/HBoxContainer/HourStationF0"]
+[node name="Outline" parent="StationScroll/HBoxContainer/HourStationF3/Control/Circle" index="0"]
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
+script = ExtResource("2_s3yop")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
+
+[editable path="StationScroll/HBoxContainer/HourStationF1"]
+[editable path="StationScroll/HBoxContainer/HourStationF2"]
+[editable path="StationScroll/HBoxContainer/HourStationF3"]

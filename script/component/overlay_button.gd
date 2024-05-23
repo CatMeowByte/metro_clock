@@ -6,8 +6,7 @@ signal setting_pressed
 @export var distance_max: int = 96
 
 func _ready():
-	modulate.a = 0
-	visible = true
+	dissapear()
 
 func _input(event):
 	if not event is InputEventMouseMotion:
@@ -20,6 +19,11 @@ func _input(event):
 		0,
 		1
 	), 0, 1)
+
+
+func dissapear():
+	modulate.a = 0
+	visible = true
 
 
 func _on_fullscreen_pressed():

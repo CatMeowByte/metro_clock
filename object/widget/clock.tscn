@@ -1,9 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvwpslr35fqy3"]
+[gd_scene load_steps=9 format=3 uid="uid://dvwpslr35fqy3"]
 
-[ext_resource type="StyleBox" uid="uid://bg7uqy3w5e0tk" path="res://resource/generic.stylebox" id="1_ylpp8"]
 [ext_resource type="Script" path="res://script/widget/clock.gd" id="2_2qgcw"]
 [ext_resource type="FontFile" uid="uid://drgbasabdvfq" path="res://font/BebasNeue-Regular.ttf" id="2_3av3o"]
+[ext_resource type="Script" path="res://script/component/theme_mode_dark_self_modulate.gd" id="2_ikgey"]
 [ext_resource type="FontFile" uid="uid://dhibeydk3b3a5" path="res://font/RobotoCondensed-Bold.ttf" id="3_glht2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_111sc"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
 
 [sub_resource type="FontVariation" id="FontVariation_ob7yi"]
 base_font = ExtResource("2_3av3o")
@@ -19,44 +27,46 @@ base_font = ExtResource("2_3av3o")
 spacing_top = -15
 spacing_bottom = -40
 
-[node name="Clock" type="PanelContainer"]
-self_modulate = Color(0.694118, 0.243137, 0.32549, 1)
+[node name="Clock" type="MarginContainer"]
 size_flags_vertical = 3
-theme_override_styles/panel = ExtResource("1_ylpp8")
 script = ExtResource("2_2qgcw")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(0.580392, 0.690196, 0.760784, 1)
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_styles/panel = SubResource("StyleBoxFlat_111sc")
+script = ExtResource("2_ikgey")
+color_light = Color(0.580392, 0.690196, 0.760784, 1)
+color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="Hour" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Hour" type="Label" parent="PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_ob7yi")
 theme_override_font_sizes/font_size = 172
 text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_ikgey")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(16, 2.08165e-12)
 layout_mode = 2
 
-[node name="Blinker" type="Control" parent="MarginContainer/HBoxContainer/CenterContainer"]
+[node name="Blinker" type="Control" parent="PanelContainer/HBoxContainer/CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/CenterContainer/Blinker"]
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+[node name="Label3" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/Blinker"]
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,12 +84,15 @@ theme_override_font_sizes/font_size = 172
 text = "."
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_ikgey")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="Node2D" type="Node2D" parent="MarginContainer/HBoxContainer/CenterContainer/Blinker"]
+[node name="Node2D" type="Node2D" parent="PanelContainer/HBoxContainer/CenterContainer/Blinker"]
 rotation = 3.14159
 
-[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/CenterContainer/Blinker/Node2D"]
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+[node name="Label4" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/Blinker/Node2D"]
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -96,22 +109,31 @@ theme_override_font_sizes/font_size = 172
 text = "."
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_ikgey")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="Minute" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Minute" type="Label" parent="PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_4u35h")
 theme_override_font_sizes/font_size = 172
 text = "34"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_ikgey")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="Period" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Period" type="Label" parent="PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_glht2")
 theme_override_font_sizes/font_size = 32
 text = "PM"
 vertical_alignment = 1
+script = ExtResource("2_ikgey")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)

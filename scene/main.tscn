@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dnosl5ehwn4hr" path="res://object/component/overlay_button.tscn" id="7_d2km5"]
 [ext_resource type="PackedScene" uid="uid://cwm31hmb87vly" path="res://scene/marker_pointer.tscn" id="7_dp8lm"]
 [ext_resource type="PackedScene" uid="uid://45rjmsp0hq40" path="res://scene/running_text.tscn" id="8_t6hb1"]
-[ext_resource type="Texture2D" uid="uid://dktqy4vw2euqg" path="res://image/sweetie-16-1x.png" id="8_uk66e"]
+[ext_resource type="Script" path="res://Script/component/cursor_autohide.gd" id="11_wbkyi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ba1os"]
 shader = ExtResource("6_282ch")
@@ -91,10 +91,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_bm0fi")
 
-[node name="Palette" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(473, -51)
-scale = Vector2(64, 64)
-texture = ExtResource("8_uk66e")
+[node name="CursorAutohide" type="Timer" parent="."]
+one_shot = true
+script = ExtResource("11_wbkyi")
 
 [connection signal="setting_pressed" from="OverlayButton" to="Setting" method="_on_interface_setting_pressed"]
+[connection signal="timeout" from="CursorAutohide" to="OverlayButton" method="dissapear"]
+[connection signal="timeout" from="CursorAutohide" to="CursorAutohide" method="_on_timeout"]

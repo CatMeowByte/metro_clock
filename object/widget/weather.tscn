@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=3 uid="uid://cwbsr3fl447dt"]
+[gd_scene load_steps=20 format=3 uid="uid://cwbsr3fl447dt"]
 
-[ext_resource type="StyleBox" uid="uid://bg7uqy3w5e0tk" path="res://resource/generic.stylebox" id="1_7pwkq"]
 [ext_resource type="Script" path="res://script/widget/weather.gd" id="2_lgpkg"]
 [ext_resource type="Texture2D" uid="uid://c4q6uiqhaaguc" path="res://image/icon/map-marker-outline-custom.png" id="2_moa5r"]
 [ext_resource type="Texture2D" uid="uid://cht5xw7ipcteq" path="res://image/weather/weather-sunny-custom.png" id="3_f8hfk"]
@@ -16,17 +15,25 @@
 [ext_resource type="Texture2D" uid="uid://dphb2i1lmyx6r" path="res://image/weather/weather-partly-rainy-custom.png" id="10_yu60y"]
 [ext_resource type="Texture2D" uid="uid://cqcdqfq7npi27" path="res://image/weather/weather-partly-snowy-custom.png" id="11_ifre1"]
 [ext_resource type="Texture2D" uid="uid://cddjniscvihc4" path="res://image/weather/weather-lightning-custom.png" id="12_45w4d"]
+[ext_resource type="Script" path="res://script/component/theme_mode_dark_self_modulate.gd" id="14_6tpqj"]
 [ext_resource type="Texture2D" uid="uid://c2sbmbqt6x7t0" path="res://image/weather/weather-hail-custom.png" id="14_lrgvw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33dht"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
 
 [sub_resource type="FontVariation" id="FontVariation_0y63q"]
 base_font = ExtResource("4_f0qcj")
 spacing_top = -10
 spacing_bottom = -20
 
-[node name="Weather" type="PanelContainer"]
-self_modulate = Color(0.231373, 0.364706, 0.788235, 1)
+[node name="Weather" type="MarginContainer"]
+self_modulate = Color(0.2, 0.235294, 0.341176, 1)
 size_flags_vertical = 3
-theme_override_styles/panel = ExtResource("1_7pwkq")
 script = ExtResource("2_lgpkg")
 wmo_weather_image = {
 0: ExtResource("3_f8hfk"),
@@ -59,108 +66,130 @@ wmo_weather_image = {
 99: ExtResource("14_lrgvw")
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(0.580392, 0.690196, 0.760784, 1)
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 12
+theme_override_styles/panel = SubResource("StyleBoxFlat_33dht")
+script = ExtResource("14_6tpqj")
+color_light = Color(0.580392, 0.690196, 0.760784, 1)
+color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 layout_mode = 2
 texture = ExtResource("2_moa5r")
 expand_mode = 2
 stretch_mode = 5
+script = ExtResource("14_6tpqj")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
 
-[node name="Location" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+[node name="Location" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_yhxa2")
 theme_override_font_sizes/font_size = 16
 text = "London"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("14_6tpqj")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 
-[node name="Temperature" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Temperature" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_0y63q")
 theme_override_font_sizes/font_size = 80
 text = "32"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("14_6tpqj")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = -10
 theme_override_constants/margin_bottom = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 0
 
-[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer/MarginContainer/HBoxContainer"]
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+[node name="Label4" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer/MarginContainer/HBoxContainer"]
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_f0qcj")
 theme_override_font_sizes/font_size = 48
 text = "°"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("14_6tpqj")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="Unit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer/MarginContainer/HBoxContainer"]
+[node name="Unit" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/CenterContainer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_f0qcj")
 theme_override_font_sizes/font_size = 48
 text = "C"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("14_6tpqj")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Icon" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("5_wktld")
 expand_mode = 1
 stretch_mode = 5
+script = ExtResource("14_6tpqj")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="Description" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Description" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_yhxa2")
 theme_override_font_sizes/font_size = 16
 text = "Partly Cloudy"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("14_6tpqj")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)

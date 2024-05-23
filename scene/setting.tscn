@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqvy4sewcyno7"]
+[gd_scene load_steps=12 format=3 uid="uid://dqvy4sewcyno7"]
 
 [ext_resource type="StyleBox" uid="uid://cgbcrgnbpxddj" path="res://resource/hover.stylebox" id="1_03fam"]
 [ext_resource type="Theme" uid="uid://dpg7t2c18fw5c" path="res://resource/setting.theme" id="1_5hiu6"]
 [ext_resource type="Script" path="res://script/scene/setting.gd" id="2_qqacj"]
 [ext_resource type="FontFile" uid="uid://dsdiyhd717i2v" path="res://font/RobotoCondensed-Regular.ttf" id="2_tnh6k"]
 [ext_resource type="Texture2D" uid="uid://ciwkos3667i0j" path="res://image/icon/close-custom.png" id="3_pvs18"]
-[ext_resource type="Texture2D" uid="uid://dktqy4vw2euqg" path="res://image/sweetie-16-1x.png" id="4_fcrb7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm3wx"]
 bg_color = Color(1, 1, 1, 1)
@@ -499,12 +498,6 @@ theme_override_colors/font_disabled_color = Color(0.956863, 0.956863, 0.956863, 
 theme_override_styles/disabled = SubResource("StyleBoxFlat_73ua5")
 disabled = true
 text = "Settings saved!"
-
-[node name="Palette" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(473, -51)
-scale = Vector2(64, 64)
-texture = ExtResource("4_fcrb7")
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Header/Close" to="." method="_on_interface_close_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/ModeDark/CheckBox" to="." method="_on_button_pressed"]

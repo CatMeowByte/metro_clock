@@ -30,13 +30,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/PointerLeft"]
-self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+self_modulate = Color(0.580392, 0.690196, 0.760784, 1)
 rotation = -1.5708
 scale = Vector2(0.09, 0.05)
 texture = ExtResource("2_uab4o")
 offset = Vector2(2.08165e-12, -96)
 script = ExtResource("3_y4ep4")
-color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_light = Color(0.580392, 0.690196, 0.760784, 1)
 color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
@@ -51,20 +51,20 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/VBoxContainer/PointerUp"]
-self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+self_modulate = Color(0.580392, 0.690196, 0.760784, 1)
 scale = Vector2(0.09, 0.05)
 texture = ExtResource("2_uab4o")
 offset = Vector2(2.08165e-12, -96)
 script = ExtResource("3_y4ep4")
-color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_light = Color(0.580392, 0.690196, 0.760784, 1)
 color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
-self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+self_modulate = Color(0.580392, 0.690196, 0.760784, 1)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("3_cgfcc")
 script = ExtResource("3_y4ep4")
-color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_light = Color(0.580392, 0.690196, 0.760784, 1)
 color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer"]
@@ -81,12 +81,15 @@ alignment = 1
 
 [node name="Event" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_0nbm8")
 theme_override_font_sizes/font_size = 24
 text = "Maghrib"
 vertical_alignment = 1
+script = ExtResource("3_y4ep4")
+color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -94,35 +97,41 @@ theme_override_constants/separation = 32
 
 [node name="Time" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_v4qx6")
 theme_override_font_sizes/font_size = 16
 text = "12:34 PM"
 vertical_alignment = 1
+script = ExtResource("3_y4ep4")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
 
 [node name="Duration" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_v4qx6")
 theme_override_font_sizes/font_size = 16
 text = "5 Min Ago"
 horizontal_alignment = 2
 vertical_alignment = 1
+script = ExtResource("3_y4ep4")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
 
-[node name="PointerRight" type="Control" parent="HBoxContainer"]
+[node name="PointerRight" type="HBoxContainer" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/PointerRight"]
-self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+self_modulate = Color(0.580392, 0.690196, 0.760784, 1)
 rotation = 1.5708
 scale = Vector2(0.09, 0.05)
 texture = ExtResource("2_uab4o")
 offset = Vector2(2.08165e-12, -96)
 script = ExtResource("3_y4ep4")
-color_light = Color(0.101961, 0.109804, 0.172549, 1)
+color_light = Color(0.580392, 0.690196, 0.760784, 1)
 color_dark = Color(0.2, 0.235294, 0.341176, 1)
