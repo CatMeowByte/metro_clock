@@ -64,10 +64,10 @@ const WMO_WEATHER_NAME = {
 
 
 func _ready():
-	GlobalWeather.weather_updated.connect(_on_weather_updated)
+	GlobalWeather.weather_updated.connect(update_weather)
 
 
-func _on_weather_updated():
+func update_weather():
 	var geocode_country = GlobalWeather.geocode[GlobalConfig.location_country_id].country
 	var location_name = geocode_country.name
 	if geocode_country.states:

@@ -20,7 +20,7 @@ func _ready():
 	GlobalDate.h_date_updated.connect(_on_h_date_updated)
 
 
-func _on_minute_updated():
+func marker_update():
 	var view_width = get_viewport_rect().size.x
 	var view_center = view_width / 2
 
@@ -76,7 +76,7 @@ func _on_minute_updated():
 
 
 func _on_h_date_updated():
-	await get_tree().create_timer(1).timeout
-	_on_minute_updated()
+	#await get_tree().create_timer(1).timeout # FIXME: I don't remember why this is here
+	marker_update()
 	GlobalDate.h_date_updated.disconnect(_on_h_date_updated)
-	GlobalTime.minute_updated.connect(_on_minute_updated)
+	GlobalTime.minute_updated.connect(marker_update)

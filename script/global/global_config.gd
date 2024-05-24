@@ -3,10 +3,11 @@ extends Node
 
 signal setting_updated
 
-const CONFIG_PATH = "user://setting.config"
 var config = ConfigFile.new()
 
+const CONFIG_PATH = "user://setting.config"
 
+#region Setting Variable
 # Debug
 var debug_fake_api: bool
 var debug_time_travel: bool
@@ -14,7 +15,7 @@ var debug_time_travel_speed: int
 
 # Theme
 var theme_color_accent: Color
-var theme_mode_dark: bool
+var theme_mode: int
 
 # Time
 var hour_12: bool
@@ -31,6 +32,8 @@ var running_text: Array
 # Anti burn-in noise
 var noise_stability: int
 var noise_duration: float
+#endregion
+
 
 func _ready():
 	config_set()
@@ -47,10 +50,10 @@ func config_load():
 	debug_time_travel = config.get_value(section, "debug_time_travel", false)
 	debug_time_travel_speed = config.get_value(section, "debug_time_travel_speed", 2000)
 
-# Theme
+	# Theme
 	section = "Theme"
 	theme_color_accent = config.get_value(section, "theme_color_accent",  Color.hex(0xef7d57ff))
-	theme_mode_dark = config.get_value(section, "theme_mode_dark",  false)
+	theme_mode = config.get_value(section, "theme_mode",  0)
 
 	# Time
 	section = "Time"
@@ -86,10 +89,10 @@ func config_save():
 	config.set_value(section, "debug_time_travel", debug_time_travel)
 	config.set_value(section, "debug_time_travel_speed", debug_time_travel_speed)
 
-	# Time
+	# Theme
 	section = "Theme"
 	config.set_value(section, "theme_color_accent", theme_color_accent)
-	config.set_value(section, "theme_mode_dark", theme_mode_dark)
+	config.set_value(section, "theme_mode", theme_mode)
 
 	# Time
 	section = "Time"

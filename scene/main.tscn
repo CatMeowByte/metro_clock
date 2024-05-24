@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dnosl5ehwn4hr" path="res://object/component/overlay_button.tscn" id="7_d2km5"]
 [ext_resource type="PackedScene" uid="uid://cwm31hmb87vly" path="res://scene/marker_pointer.tscn" id="7_dp8lm"]
 [ext_resource type="PackedScene" uid="uid://45rjmsp0hq40" path="res://scene/running_text.tscn" id="8_t6hb1"]
-[ext_resource type="Script" path="res://Script/component/cursor_autohide.gd" id="11_wbkyi"]
+[ext_resource type="Script" path="res://script/component/cursor_autohide.gd" id="11_r0hlq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ba1os"]
 shader = ExtResource("6_282ch")
@@ -89,8 +89,8 @@ script = ExtResource("6_bm0fi")
 
 [node name="CursorAutohide" type="Timer" parent="."]
 one_shot = true
-script = ExtResource("11_wbkyi")
+script = ExtResource("11_r0hlq")
 
 [connection signal="setting_pressed" from="OverlayButton" to="Setting" method="_on_interface_setting_pressed"]
 [connection signal="timeout" from="CursorAutohide" to="OverlayButton" method="dissapear"]
-[connection signal="timeout" from="CursorAutohide" to="CursorAutohide" method="_on_timeout"]
+[connection signal="timeout" from="CursorAutohide" to="CursorAutohide" method="mouse_hide"]

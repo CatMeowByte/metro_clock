@@ -6,7 +6,7 @@ var child: Label
 
 
 func _ready():
-	GlobalConfig.setting_updated.connect(_on_setting_updated)
+	GlobalConfig.setting_updated.connect(child_populate)
 
 	child_populate()
 
@@ -47,7 +47,3 @@ func child_reorder():
 func child_delete():
 	for node in %TextBox.get_children():
 		node.free()
-
-
-func _on_setting_updated():
-	child_populate()

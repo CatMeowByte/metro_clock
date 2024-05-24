@@ -28,6 +28,8 @@ var m: Dictionary = {
 	"tomonight" : -1, # Tomorrow's late night
 }
 
+var time_minute_base: int = -1
+
 
 func _ready():
 	minute_updated.connect(_on_minute_updated)
@@ -64,7 +66,12 @@ func string_to_minute_base(text: String):
 
 
 func _on_minute_updated():
-	var time_current = (GlobalTime.t.hour * 60) + GlobalTime.t.minute
+	time_minute_base = (GlobalTime.t.hour * 60) + GlobalTime.t.minute
+
 	for marker in m:
-		if m[marker] == time_current:
+		if m[marker] == time_minute_base:
 			emit_signal("marker_triggered", marker)
+
+
+func is_nighttime():
+	return not (m.fajr <= time_minute_base < m.maghrib)

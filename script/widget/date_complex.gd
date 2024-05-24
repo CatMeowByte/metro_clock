@@ -52,7 +52,7 @@ func _ready():
 	# Initially trigger when hijri date is set, then update per hour
 	GlobalDate.h_date_updated.connect(_on_h_date_updated)
 
-func _on_hour_updated():
+func date_update():
 	# Hijri day change at midday
 	var hijri_offset = int(GlobalTime.t.hour >= 12)
 
@@ -71,6 +71,6 @@ func _on_hour_updated():
 	%WeekdayH.text = WEEKDAY_NAME_HIJRI[wrap(GlobalDate.g.weekday + hijri_offset, 0, 7)]
 
 func _on_h_date_updated():
-	_on_hour_updated()
+	date_update()
 	GlobalDate.h_date_updated.disconnect(_on_h_date_updated)
-	GlobalTime.hour_updated.connect(_on_hour_updated)
+	GlobalTime.hour_updated.connect(date_update)

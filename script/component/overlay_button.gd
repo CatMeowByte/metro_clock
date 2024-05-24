@@ -26,21 +26,21 @@ func dissapear():
 	visible = true
 
 
-func _on_fullscreen_pressed():
+func fullscreen():
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
-func _on_setting_pressed():
+func setting():
 	emit_signal("setting_pressed")
 
 
-func _on_restart_pressed():
+func restart():
 	OS.create_process(OS.get_executable_path(), [])
 	get_tree().quit()
 
 
-func _on_close_pressed():
+func close():
 	get_tree().quit()

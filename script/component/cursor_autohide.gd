@@ -7,5 +7,5 @@ func _input(event):
 		start()
 
 
-func _on_timeout():
+func mouse_hide():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

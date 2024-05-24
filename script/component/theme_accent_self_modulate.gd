@@ -2,9 +2,9 @@ extends CanvasItem
 
 
 func _ready():
-	GlobalConfig.setting_updated.connect(_on_setting_updated)
-	_on_setting_updated()
+	GlobalConfig.setting_updated.connect(color_update)
+	color_update()
 
 
-func _on_setting_updated():
+func color_update():
 	self_modulate = GlobalConfig.theme_color_accent

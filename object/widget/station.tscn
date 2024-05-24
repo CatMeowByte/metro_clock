@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://script/widget/station.gd" id="1_wcrkt"]
 [ext_resource type="PackedScene" uid="uid://l2glpsv24qys" path="res://object/component/hour_station.tscn" id="2_5bcfi"]
 [ext_resource type="Script" path="res://script/component/theme_mode_dark_self_modulate.gd" id="2_s3yop"]
-[ext_resource type="Script" path="res://Script/component/theme_accent_self_modulate.gd" id="3_10g0q"]
+[ext_resource type="Script" path="res://script/component/theme_accent_self_modulate.gd" id="3_10g0q"]
 [ext_resource type="Script" path="res://script/component/theme_accent_self_modulate.gd" id="3_eymn1"]
 
 [node name="Station" type="Control"]

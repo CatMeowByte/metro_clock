@@ -4,7 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://cgr2rtggk7ycp" path="res://resource/padded.stylebox" id="2_3rfbk"]
 [ext_resource type="Texture2D" uid="uid://b00623j6aj7xe" path="res://image/icon/cog-custom.png" id="2_8wenr"]
 [ext_resource type="Texture2D" uid="uid://cavvos8j8k7ms" path="res://image/icon/fullscreen-custom.png" id="3_5qn35"]
-[ext_resource type="Script" path="res://Script/component/theme_accent_self_modulate.gd" id="3_d4g6x"]
+[ext_resource type="Script" path="res://script/component/theme_accent_self_modulate.gd" id="3_d4g6x"]
 [ext_resource type="Texture2D" uid="uid://dvb7rw4xs7c3h" path="res://image/icon/reload-custom.png" id="3_r11eu"]
 [ext_resource type="Texture2D" uid="uid://ciwkos3667i0j" path="res://image/icon/close-custom.png" id="6_hph3k"]
 
@@ -49,7 +49,7 @@ texture_normal = ExtResource("6_hph3k")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="PanelContainer/HBoxContainer/Fullscreen" to="." method="_on_fullscreen_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/Setting" to="." method="_on_setting_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/Fullscreen" to="." method="fullscreen"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/Setting" to="." method="setting"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/Restart" to="." method="restart"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/Close" to="." method="close"]

@@ -6,18 +6,17 @@ const EVENT_NAME: Dictionary = {
 	"asr" : "Asr",
 	"maghrib" : "Maghrib",
 	"isha" : "Isha",
-	"sunrise" : "Sunrise",
 }
 
 
 func _ready():
-	GlobalTime.marker_triggered.connect(_on_marker_triggered)
+	GlobalTime.marker_triggered.connect(popout)
 
 	visible = true
 	scale = Vector2.ZERO
 
 
-func _on_marker_triggered(marker):
+func popout(marker):
 	# Early bail
 	if marker not in EVENT_NAME:
 		return

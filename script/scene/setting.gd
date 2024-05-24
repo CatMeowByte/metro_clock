@@ -5,11 +5,16 @@ extends Control
 func _ready():
 	button_update()
 
+	%NoticeRestart.visible = false
 	%Footer/Notifier.visible = false
 	%Footer/Button.visible = true
 
 	visible = true
 	position.y = -get_viewport_rect().size.y
+
+	# Remove debug tab on release
+	if not OS.is_debug_build():
+		%Tab/Debug.queue_free()
 
 
 func setting_update():
@@ -27,7 +32,7 @@ func data_update():
 	for child in %ColorAccent.get_children():
 		if child.button_pressed:
 			GlobalConfig.theme_color_accent = child.self_modulate
-	GlobalConfig.theme_mode_dark = %ModeDark/CheckBox.is_pressed()
+	GlobalConfig.theme_mode = %ThemeMode/OptionButton.get_selected_id()
 
 	# Time
 	GlobalConfig.hour_12 = %Hour12/CheckBox.is_pressed()
@@ -78,9 +83,9 @@ func button_update():
 			child.pressed.connect(_on_button_pressed)
 		child.button_pressed = child.self_modulate == GlobalConfig.theme_color_accent
 
-	# Dark Mode
-	button = %ModeDark/CheckBox
-	button.button_pressed = GlobalConfig.theme_mode_dark
+	# Theme Mode
+	button = %ThemeMode/OptionButton
+	button.select(GlobalConfig.theme_mode)
 	#endregion
 
 	#region Time
@@ -188,4 +193,5 @@ func _on_interface_reset_pressed():
 func _on_interface_save_pressed():
 	GlobalConfig.config_save()
 	button_update()
+	%NoticeRestart.visible = true
 	footer_pressed("Saved!")

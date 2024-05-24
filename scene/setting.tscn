@@ -76,33 +76,34 @@ texture_normal = ExtResource("3_pvs18")
 ignore_texture_size = true
 stretch_mode = 6
 
-[node name="TabContainer" type="TabContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="Tab" type="TabContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/side_margin = 0
 use_hidden_tabs_for_min_size = true
 
-[node name="Theme" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer"]
+[node name="Theme" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Color"
 
-[node name="ColorAccent" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer"]
+[node name="ColorAccent" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="Purple" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Purple" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(0.364706, 0.152941, 0.364706, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -115,7 +116,7 @@ toggle_mode = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="Red" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Red" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(0.694118, 0.243137, 0.32549, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -128,7 +129,7 @@ toggle_mode = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="Orange" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Orange" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(0.937255, 0.490196, 0.341176, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -142,7 +143,7 @@ button_pressed = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="Yellow" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Yellow" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(1, 0.803922, 0.458824, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -155,7 +156,7 @@ toggle_mode = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="Lime" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Lime" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(0.654902, 0.941176, 0.439216, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -168,7 +169,7 @@ toggle_mode = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="Green" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Green" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(0.219608, 0.717647, 0.392157, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -181,7 +182,7 @@ toggle_mode = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="Moss" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Moss" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(0.145098, 0.443137, 0.47451, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -194,7 +195,7 @@ toggle_mode = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="Deep" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Deep" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(0.231373, 0.364706, 0.788235, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -207,7 +208,7 @@ toggle_mode = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="Blue" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Blue" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(0.254902, 0.65098, 0.964706, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -220,7 +221,7 @@ toggle_mode = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="Sky" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
+[node name="Sky" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/HBoxContainer/ColorAccent"]
 self_modulate = Color(0.45098, 0.937255, 0.968627, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -233,147 +234,137 @@ toggle_mode = true
 action_mode = 0
 button_group = SubResource("ButtonGroup_s1diq")
 
-[node name="ModeDark" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer"]
+[node name="ThemeMode" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/ModeDark"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/ThemeMode"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Dark mode"
+text = "Theme"
 
-[node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/ModeDark"]
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/ThemeMode"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Time" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer"]
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/ThemeMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+selected = 0
+allow_reselect = true
+popup/item_0/text = "Light"
+popup/item_0/id = 0
+popup/item_1/text = "Dark"
+popup/item_1/id = 1
+popup/item_2/text = "Auto"
+popup/item_2/id = 2
+
+[node name="Time" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Time"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time"]
 layout_mode = 2
 
-[node name="Hour12" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Time/VBoxContainer"]
+[node name="Hour12" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Time/VBoxContainer/Hour12"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Hour12"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "12 Hour format"
+text = "12 Hour Format"
 
-[node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Time/VBoxContainer/Hour12"]
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Hour12"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Location" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer"]
+[node name="Location" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location"]
 layout_mode = 2
 
-[node name="Country" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer"]
+[node name="Country" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer/Country"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/Country"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Country"
 
-[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer/Country"]
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/Country"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 allow_reselect = true
 
-[node name="State" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer"]
+[node name="State" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer/State"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/State"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "State"
 
-[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer/State"]
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/State"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 allow_reselect = true
 
-[node name="City" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer"]
+[node name="City" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer/City"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/City"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "City"
 
-[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer/City"]
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/City"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 allow_reselect = true
 
-[node name="Overlay" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer"]
+[node name="Overlay" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Title"
-
-[node name="LineEdit" type="LineEdit" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Subtitle"
-
-[node name="LineEdit" type="LineEdit" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="NoiseStability" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer"]
+[node name="NoiseStability" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/NoiseStability"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer/NoiseStability"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Noise Stability"
 
-[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/NoiseStability"]
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer/NoiseStability"]
 layout_mode = 2
 size_flags_horizontal = 3
 rounded = true
 allow_greater = true
 
-[node name="NoiseDuration" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer"]
+[node name="NoiseDuration" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/NoiseDuration"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer/NoiseDuration"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Noise Duration"
 
-[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/NoiseDuration"]
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer/NoiseDuration"]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 0.25
@@ -382,24 +373,24 @@ step = 0.25
 value = 0.25
 suffix = "seconds"
 
-[node name="Rolling Text" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer"]
+[node name="Rolling Text" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Rolling Text"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RunningSpeed" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Rolling Text/VBoxContainer"]
+[node name="RunningSpeed" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Rolling Text/VBoxContainer/RunningSpeed"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningSpeed"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Rolling Speed"
 
-[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Rolling Text/VBoxContainer/RunningSpeed"]
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningSpeed"]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 1.0
@@ -407,59 +398,59 @@ value = 1.0
 rounded = true
 allow_greater = true
 
-[node name="RunningText" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Rolling Text/VBoxContainer"]
+[node name="RunningText" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Rolling Text/VBoxContainer/RunningText"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningText"]
 layout_mode = 2
 text = "Rolling Text"
 
-[node name="TextEdit" type="TextEdit" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Rolling Text/VBoxContainer/RunningText"]
+[node name="TextEdit" type="TextEdit" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningText"]
 custom_minimum_size = Vector2(2.08165e-12, 128)
 layout_mode = 2
 size_flags_vertical = 3
 placeholder_text = "Put text here.
 Separated by newline."
 
-[node name="Debug" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer"]
+[node name="Debug" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug"]
 layout_mode = 2
 
-[node name="FakeAPI" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer"]
+[node name="FakeAPI" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer/FakeAPI"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/FakeAPI"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Fake API"
 
-[node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer/FakeAPI"]
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/FakeAPI"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TimeTravel" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer"]
+[node name="TimeTravel" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer/TimeTravel"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/TimeTravel"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Time Travel"
 
-[node name="TimeTravel" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer/TimeTravel"]
+[node name="TimeTravel" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/TimeTravel"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer/TimeTravel/TimeTravel"]
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/TimeTravel/TimeTravel"]
 layout_mode = 2
 
-[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer/TimeTravel/TimeTravel"]
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/TimeTravel/TimeTravel"]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 1.0
@@ -468,9 +459,15 @@ value = 1.0
 exp_edit = true
 rounded = true
 
-[node name="TabHidden" type="Control" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="NoticeRestart" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.803922, 0.458824, 1)
+theme_override_fonts/font = ExtResource("2_tnh6k")
+text = "Some settings require restart to take effect."
+vertical_alignment = 1
 
 [node name="Footer" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -500,17 +497,18 @@ disabled = true
 text = "Settings saved!"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Header/Close" to="." method="_on_interface_close_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Theme/VBoxContainer/ModeDark/CheckBox" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Time/VBoxContainer/Hour12/CheckBox" to="." method="_on_button_pressed"]
-[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer/Country/OptionButton" to="." method="_on_button_value_pressed"]
-[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer/State/OptionButton" to="." method="_on_button_value_pressed"]
-[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Location/VBoxContainer/City/OptionButton" to="." method="_on_button_value_pressed"]
-[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/NoiseStability/SpinBox" to="." method="_on_button_value_pressed"]
-[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Overlay/VBoxContainer/NoiseDuration/SpinBox" to="." method="_on_button_value_pressed"]
-[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Rolling Text/VBoxContainer/RunningSpeed/SpinBox" to="." method="_on_button_value_pressed"]
-[connection signal="focus_exited" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Rolling Text/VBoxContainer/RunningText/TextEdit" to="." method="_on_focus_exited"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer/FakeAPI/CheckBox" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer/TimeTravel/TimeTravel/CheckBox" to="." method="_on_button_pressed"]
-[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/Debug/VBoxContainer/TimeTravel/TimeTravel/SpinBox" to="." method="_on_button_value_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/ThemeMode/CheckBox" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/ThemeMode/OptionButton" to="." method="_on_button_value_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Hour12/CheckBox" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/Country/OptionButton" to="." method="_on_button_value_pressed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/State/OptionButton" to="." method="_on_button_value_pressed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/City/OptionButton" to="." method="_on_button_value_pressed"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer/NoiseStability/SpinBox" to="." method="_on_button_value_pressed"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer/NoiseDuration/SpinBox" to="." method="_on_button_value_pressed"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningSpeed/SpinBox" to="." method="_on_button_value_pressed"]
+[connection signal="focus_exited" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningText/TextEdit" to="." method="_on_focus_exited"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/FakeAPI/CheckBox" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/TimeTravel/TimeTravel/CheckBox" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/TimeTravel/TimeTravel/SpinBox" to="." method="_on_button_value_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Footer/Button/Button" to="." method="_on_interface_reset_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Footer/Button/Button2" to="." method="_on_interface_save_pressed"]
