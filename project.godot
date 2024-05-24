@@ -18,7 +18,11 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="catmeowbyte/metro_clock"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=30
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.254902, 0.65098, 0.964706, 1)
+boot_splash/image="res://image/catmeowbyte_256.png"
+boot_splash/fullsize=false
+config/icon="res://image/icon.svg"
+boot_splash/minimum_display_time=200
 
 [autoload]
 
@@ -45,3 +49,4 @@ debug_1={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_s3tc_bptc=true

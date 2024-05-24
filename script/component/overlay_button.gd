@@ -38,7 +38,7 @@ func setting():
 
 
 func restart():
-	OS.create_process(OS.get_executable_path(), [])
+	OS.set_restart_on_exit(true)
 	get_tree().quit()
 
 
