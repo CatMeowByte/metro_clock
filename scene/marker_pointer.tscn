@@ -14,9 +14,7 @@ layout_mode = 2
 [node name="MarkerPrev" parent="Control" instance=ExtResource("2_gq8ui")]
 unique_name_in_owner = true
 layout_mode = 0
-target_position = -1440
 
 [node name="MarkerNext" parent="Control" instance=ExtResource("2_gq8ui")]
 unique_name_in_owner = true
 layout_mode = 0
-target_position = -1440
