@@ -82,9 +82,11 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/side_margin = 0
+current_tab = 1
 use_hidden_tabs_for_min_size = true
 
 [node name="Theme" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme"]
@@ -263,7 +265,6 @@ popup/item_2/text = "Auto"
 popup/item_2/id = 2
 
 [node name="Time" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
-visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time"]
@@ -279,6 +280,109 @@ size_flags_horizontal = 3
 text = "12 Hour Format"
 
 [node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Hour12"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CalculationMethod" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/CalculationMethod"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Calculation Method"
+
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/CalculationMethod"]
+layout_mode = 2
+size_flags_horizontal = 3
+text_overrun_behavior = 4
+item_count = 14
+selected = 0
+fit_to_longest_item = false
+allow_reselect = true
+popup/item_0/text = "Shia Ithna-Ashari"
+popup/item_0/id = 0
+popup/item_1/text = "University of Islamic Sciences, Karachi"
+popup/item_1/id = 1
+popup/item_2/text = "Islamic Society of North America"
+popup/item_2/id = 2
+popup/item_3/text = "Muslim World League"
+popup/item_3/id = 3
+popup/item_4/text = "Umm Al-Qura University, Makkah"
+popup/item_4/id = 4
+popup/item_5/text = "Egyptian General Authority of Survey"
+popup/item_5/id = 5
+popup/item_6/text = "Institute of Geophysics, University of Tehran"
+popup/item_6/id = 7
+popup/item_7/text = "Gulf Region"
+popup/item_7/id = 8
+popup/item_8/text = "Kuwait"
+popup/item_8/id = 9
+popup/item_9/text = "Qatar"
+popup/item_9/id = 10
+popup/item_10/text = "Majlis Ugama Islam Singapura, Singapore"
+popup/item_10/id = 11
+popup/item_11/text = "Union Organization islamic de France"
+popup/item_11/id = 12
+popup/item_12/text = "Diyanet İşleri Başkanlığı, Turkey"
+popup/item_12/id = 13
+popup/item_13/text = "Spiritual Administration of Muslims of Russia"
+popup/item_13/id = 14
+
+[node name="LatitudeMethod" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/LatitudeMethod"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Latitude Method"
+
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/LatitudeMethod"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+selected = 0
+allow_reselect = true
+popup/item_0/text = "Middle of the Night"
+popup/item_0/id = 1
+popup/item_1/text = "One Seventh"
+popup/item_1/id = 2
+popup/item_2/text = "Angle"
+popup/item_2/id = 3
+
+[node name="Shafaq" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Shafaq"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Shafaq"
+
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Shafaq"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+selected = 0
+allow_reselect = true
+popup/item_0/text = "General"
+popup/item_0/id = 0
+popup/item_1/text = "Ahmer"
+popup/item_1/id = 1
+popup/item_2/text = "Abyad"
+popup/item_2/id = 2
+
+[node name="Hanafi" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Hanafi"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hanafi"
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Hanafi"]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -591,6 +695,10 @@ text = "Settings saved!"
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/ThemeMode/CheckBox" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Theme/VBoxContainer/ThemeMode/OptionButton" to="." method="_on_button_value_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Hour12/CheckBox" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/CalculationMethod/OptionButton" to="." method="_on_button_value_pressed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/LatitudeMethod/OptionButton" to="." method="_on_button_value_pressed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Shafaq/OptionButton" to="." method="_on_button_value_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Time/VBoxContainer/Hanafi/CheckBox" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/Country/OptionButton" to="." method="_on_button_value_pressed"]
 [connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/State/OptionButton" to="." method="_on_button_value_pressed"]
 [connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/City/OptionButton" to="." method="_on_button_value_pressed"]

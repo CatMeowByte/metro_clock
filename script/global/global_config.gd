@@ -19,6 +19,10 @@ var theme_mode: int
 
 # Time
 var hour_12: bool
+var calculation_method: int
+var latitude_method: int
+var shafaq: int
+var hanafi: bool
 
 # Geocode
 var location_country_id: int
@@ -58,6 +62,10 @@ func config_load():
 	# Time
 	section = "Time"
 	hour_12 = config.get_value(section, "hour_12", false)
+	calculation_method = config.get_value(section, "calculation_method", 0)
+	latitude_method = config.get_value(section, "latitude_method", 3)
+	shafaq = config.get_value(section, "shafaq", 0)
+	hanafi = config.get_value(section, "hanafi", false)
 
 	# Geocode
 	section = "Geocode"
@@ -97,6 +105,10 @@ func config_save():
 	# Time
 	section = "Time"
 	config.set_value(section, "hour_12", hour_12)
+	config.set_value(section, "calculation_method", calculation_method)
+	config.set_value(section, "latitude_method", latitude_method)
+	config.set_value(section, "shafaq", shafaq)
+	config.set_value(section, "hanafi", hanafi)
 
 	# Geocode
 	section = "Geocode"

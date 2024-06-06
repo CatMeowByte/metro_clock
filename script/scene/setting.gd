@@ -36,6 +36,10 @@ func data_update():
 
 	# Time
 	GlobalConfig.hour_12 = %Hour12/CheckBox.is_pressed()
+	GlobalConfig.calculation_method = %CalculationMethod/OptionButton.get_selected_id()
+	GlobalConfig.latitude_method = %LatitudeMethod/OptionButton.get_selected_id()
+	GlobalConfig.shafaq = %Shafaq/OptionButton.get_selected_id()
+	GlobalConfig.hanafi = %Hanafi/CheckBox.is_pressed()
 
 	# Geocode
 	GlobalConfig.location_country_id = %Country/OptionButton.get_selected_id()
@@ -92,6 +96,22 @@ func button_update():
 	# Hour 12
 	button = %Hour12/CheckBox
 	button.button_pressed = GlobalConfig.hour_12
+
+	# Calculation Method
+	button = %CalculationMethod/OptionButton
+	button.select(GlobalConfig.calculation_method)
+
+	# Latitude Method
+	button = %LatitudeMethod/OptionButton
+	button.select(GlobalConfig.latitude_method)
+
+	# Shafaq
+	button = %Shafaq/OptionButton
+	button.select(GlobalConfig.shafaq)
+
+	# Hanafi
+	button = %Hanafi/CheckBox
+	button.button_pressed = GlobalConfig.hanafi
 	#endregion
 
 	#region Running Text

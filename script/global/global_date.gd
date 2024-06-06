@@ -7,7 +7,7 @@ signal g_month_updated
 signal g_day_updated
 signal h_date_updated
 
-const API_URL = "https://api.aladhan.com/v1/timings/{day}-{month}-{year}?latitude={latitude}&longitude={longitude}&method=3"
+const API_URL = "https://api.aladhan.com/v1/timings/{day}-{month}-{year}?latitude={latitude}&longitude={longitude}&method={calculation_method}&latitudeAdjustmentMethod={latitude_method}&shafaq={shafaq}&school={hanafi}"
 
 var HTTP: HTTPRequest
 
@@ -64,6 +64,10 @@ func date_update():
 			"year": str(g.year).pad_zeros(4),
 			"latitude": str(GlobalWeather.latitude),
 			"longitude": str(GlobalWeather.longitude),
+			"calculation_method": str(GlobalConfig.calculation_method),
+			"latitude_method": str(GlobalConfig.latitude_method),
+			"shafaq": str({0: "general", 1: "ahmer", 2: "abyad"}[GlobalConfig.shafaq]),
+			"hanafi": str(int(GlobalConfig.hanafi)),
 		})
 	)
 	if not request == OK:
