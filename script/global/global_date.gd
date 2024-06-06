@@ -31,6 +31,7 @@ func _ready():
 
 	# Create HTTP request node
 	HTTP = HTTPRequest.new()
+	HTTP.set_timeout(10)
 	add_child(HTTP)
 	HTTP.request_completed.connect(_on_request_completed)
 
@@ -110,10 +111,12 @@ func _on_request_completed(result, _response_code, _headers, body):
 	if not result == HTTPRequest.RESULT_SUCCESS:
 		printerr("Date API HTTP request failed.")
 		request_retry.call()
+		return
 
 	var data = JSON.parse_string(body.get_string_from_utf8())
 	if not data:
 		printerr("Date API JSON parse failed.")
 		request_retry.call()
+		return
 
 	data_handle(data)

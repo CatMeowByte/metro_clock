@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqvy4sewcyno7"]
+[gd_scene load_steps=13 format=3 uid="uid://dqvy4sewcyno7"]
 
 [ext_resource type="StyleBox" uid="uid://cgbcrgnbpxddj" path="res://resource/hover.stylebox" id="1_03fam"]
 [ext_resource type="Theme" uid="uid://dpg7t2c18fw5c" path="res://resource/setting.theme" id="1_5hiu6"]
 [ext_resource type="Script" path="res://script/scene/setting.gd" id="2_qqacj"]
 [ext_resource type="FontFile" uid="uid://dsdiyhd717i2v" path="res://font/RobotoCondensed-Regular.ttf" id="2_tnh6k"]
 [ext_resource type="Texture2D" uid="uid://ciwkos3667i0j" path="res://image/icon/close-custom.png" id="3_pvs18"]
+[ext_resource type="FontFile" uid="uid://dhibeydk3b3a5" path="res://font/RobotoCondensed-Bold.ttf" id="6_4t0cp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm3wx"]
 bg_color = Color(1, 1, 1, 1)
@@ -373,24 +374,24 @@ step = 0.25
 value = 0.25
 suffix = "seconds"
 
-[node name="Rolling Text" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
+[node name="Running Text" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Running Text"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RunningSpeed" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer"]
+[node name="RunningSpeed" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Running Text/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningSpeed"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Running Text/VBoxContainer/RunningSpeed"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Rolling Speed"
+text = "Running Speed"
 
-[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningSpeed"]
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Running Text/VBoxContainer/RunningSpeed"]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 1.0
@@ -398,21 +399,111 @@ value = 1.0
 rounded = true
 allow_greater = true
 
-[node name="RunningText" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer"]
+[node name="RunningText" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Running Text/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningText"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Running Text/VBoxContainer/RunningText"]
 layout_mode = 2
-text = "Rolling Text"
+text = "Running Text"
 
-[node name="TextEdit" type="TextEdit" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningText"]
+[node name="TextEdit" type="TextEdit" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/Running Text/VBoxContainer/RunningText"]
 custom_minimum_size = Vector2(2.08165e-12, 128)
 layout_mode = 2
 size_flags_vertical = 3
 placeholder_text = "Put text here.
 Separated by newline."
+
+[node name="About" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="Metro Clock" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer"]
+layout_mode = 2
+
+[node name="Thing" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Metro Clock"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_4t0cp")
+theme_override_font_sizes/font_size = 32
+text = "Metro Clock"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Metro Clock"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Creator" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Metro Clock/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CatMeowByte"
+
+[node name="Link" type="LinkButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Metro Clock/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "catmeowbyte@gmail.com"
+underline = 1
+uri = "mailto:catmeowbyte@gmail.com"
+
+[node name="Al Adhan" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer"]
+layout_mode = 2
+
+[node name="Thing" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Al Adhan"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_4t0cp")
+theme_override_font_sizes/font_size = 32
+text = "Al Adhan"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Al Adhan"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Creator" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Al Adhan/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Islamic Network"
+
+[node name="Link" type="LinkButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Al Adhan/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "islamic.network"
+underline = 1
+uri = "https://islamic.network/"
+
+[node name="Open-Meteo" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer"]
+layout_mode = 2
+
+[node name="Thing" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Open-Meteo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_4t0cp")
+theme_override_font_sizes/font_size = 32
+text = "Open-Meteo"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Open-Meteo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Creator" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Open-Meteo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Open-Meteo"
+
+[node name="Link" type="LinkButton" parent="CenterContainer/PanelContainer/VBoxContainer/Tab/About/VBoxContainer/Open-Meteo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "open-meteo.com"
+underline = 1
+uri = "https://open-meteo.com/"
 
 [node name="Debug" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Tab"]
 visible = false
@@ -505,8 +596,8 @@ text = "Settings saved!"
 [connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Location/VBoxContainer/City/OptionButton" to="." method="_on_button_value_pressed"]
 [connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer/NoiseStability/SpinBox" to="." method="_on_button_value_pressed"]
 [connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Overlay/VBoxContainer/NoiseDuration/SpinBox" to="." method="_on_button_value_pressed"]
-[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningSpeed/SpinBox" to="." method="_on_button_value_pressed"]
-[connection signal="focus_exited" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Rolling Text/VBoxContainer/RunningText/TextEdit" to="." method="_on_focus_exited"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Running Text/VBoxContainer/RunningSpeed/SpinBox" to="." method="_on_button_value_pressed"]
+[connection signal="focus_exited" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Running Text/VBoxContainer/RunningText/TextEdit" to="." method="_on_focus_exited"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/FakeAPI/CheckBox" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/TimeTravel/TimeTravel/CheckBox" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/Tab/Debug/VBoxContainer/TimeTravel/TimeTravel/SpinBox" to="." method="_on_button_value_pressed"]

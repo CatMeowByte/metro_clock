@@ -1,5 +1,8 @@
 extends Timer
 
+func _ready():
+	mouse_hide()
+
 
 func _input(event):
 	if event is InputEventMouseMotion:

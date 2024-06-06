@@ -22,7 +22,7 @@ func child_populate():
 	child_delete()
 	for text in GlobalConfig.running_text:
 		child_create(text)
-		child_create("        ###        ")
+		child_create("        ")
 	child_select()
 
 
