@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pqhogfv0yu6f"
-path="res://.godot/imported/water-custom.png-929685f3cba7dc2b79329dfbdb29da2b.ctex"
+uid="uid://cplv1vn05vuaf"
+path="res://.godot/imported/wifi-off-custom.png-51d12f7e9fd5a18a3d3b0365eb4b7767.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/icon/water-custom.png"
-dest_files=["res://.godot/imported/water-custom.png-929685f3cba7dc2b79329dfbdb29da2b.ctex"]
+source_file="res://image/icon/wifi-off-custom.png"
+dest_files=["res://.godot/imported/wifi-off-custom.png-51d12f7e9fd5a18a3d3b0365eb4b7767.ctex"]
 
 [params]
 

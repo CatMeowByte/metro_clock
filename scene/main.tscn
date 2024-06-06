@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5aukoktn76qd"]
+[gd_scene load_steps=17 format=3 uid="uid://c5aukoktn76qd"]
 
 [ext_resource type="PackedScene" uid="uid://b3feaj3u8cqwh" path="res://scene/heads_up_display.tscn" id="1_5cdse"]
 [ext_resource type="Script" path="res://script/component/theme_mode_dark_self_modulate.gd" id="1_gght0"]
@@ -9,8 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://dqvy4sewcyno7" path="res://scene/setting.tscn" id="6_t67if"]
 [ext_resource type="PackedScene" uid="uid://dnosl5ehwn4hr" path="res://object/component/overlay_button.tscn" id="7_d2km5"]
 [ext_resource type="PackedScene" uid="uid://cwm31hmb87vly" path="res://scene/marker_pointer.tscn" id="7_dp8lm"]
+[ext_resource type="FontFile" uid="uid://drgbasabdvfq" path="res://font/BebasNeue-Regular.ttf" id="7_gjpja"]
+[ext_resource type="Texture2D" uid="uid://cplv1vn05vuaf" path="res://image/icon/wifi-off-custom.png" id="7_hxmvr"]
+[ext_resource type="Script" path="res://script/component/nonet.gd" id="7_j2g4m"]
 [ext_resource type="PackedScene" uid="uid://45rjmsp0hq40" path="res://scene/running_text.tscn" id="8_t6hb1"]
 [ext_resource type="Script" path="res://script/component/cursor_autohide.gd" id="11_r0hlq"]
+
+[sub_resource type="FontVariation" id="FontVariation_32ley"]
+base_font = ExtResource("7_gjpja")
+spacing_glyph = 8
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ba1os"]
 shader = ExtResource("6_282ch")
@@ -61,6 +68,43 @@ layout_mode = 2
 [node name="Now" parent="." instance=ExtResource("5_ujfaf")]
 visible = false
 layout_mode = 1
+
+[node name="NoNet" type="ColorRect" parent="."]
+self_modulate = Color(0.694118, 0.243137, 0.32549, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_j2g4m")
+
+[node name="CenterContainer" type="CenterContainer" parent="NoNet"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NoNet/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="NoNet/CenterContainer/VBoxContainer"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture = ExtResource("7_hxmvr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="NoNet/CenterContainer/VBoxContainer"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_32ley")
+theme_override_font_sizes/font_size = 64
+text = "NO INTERNET"
 
 [node name="Setting" parent="." instance=ExtResource("6_t67if")]
 visible = false
