@@ -56,6 +56,8 @@ func data_update():
 		if text:
 			GlobalConfig.running_text.append(text)
 
+	GlobalConfig.running_randomize = %RunningRandomize/CheckBox.is_pressed()
+
 	# Anti burn-in noise
 	GlobalConfig.noise_stability = %NoiseStability/SpinBox.get_value()
 	GlobalConfig.noise_duration = %NoiseDuration/SpinBox.get_value()
@@ -122,6 +124,10 @@ func button_update():
 	# Text
 	button = %RunningText/TextEdit
 	button.text = "\n".join(GlobalConfig.running_text)
+
+	# Randomize
+	button = %RunningRandomize/CheckBox
+	button.button_pressed = GlobalConfig.running_randomize
 	#endregion
 
 	#region Geocode

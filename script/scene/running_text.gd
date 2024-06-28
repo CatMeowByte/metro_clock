@@ -20,7 +20,12 @@ func _process(delta):
 
 func child_populate():
 	child_delete()
-	for text in GlobalConfig.running_text:
+	var text_pool: Array = GlobalConfig.running_text.duplicate()
+
+	if GlobalConfig.running_randomize:
+		text_pool.shuffle()
+
+	for text in text_pool:
 		child_create(text)
 		child_create("        ")
 	child_select()

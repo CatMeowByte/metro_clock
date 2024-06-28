@@ -32,6 +32,7 @@ var location_city_id: int
 # Running text
 var running_text_scroll_speed: int
 var running_text: Array
+var running_randomize: bool
 
 # Anti burn-in noise
 var noise_stability: int
@@ -81,6 +82,7 @@ func config_load():
 		"Sphinx of black quartz, judge my vow.",
 		"Pack my box with five dozen liquor jugs.",
 	])
+	running_randomize = config.get_value(section, "running_randomize", false)
 
 	# Anti burn-in noise
 	section = "Noise"
@@ -120,6 +122,7 @@ func config_save():
 	section = "RunningText"
 	config.set_value(section, "running_text_scroll_speed", running_text_scroll_speed)
 	config.set_value(section, "running_text", running_text)
+	config.set_value(section, "running_randomize", running_randomize)
 
 	# Anti burn-in noise
 	section = "Noise"
