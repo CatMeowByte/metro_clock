@@ -70,6 +70,7 @@ visible = false
 layout_mode = 1
 
 [node name="NoNet" type="ColorRect" parent="."]
+visible = false
 self_modulate = Color(0.694118, 0.243137, 0.32549, 1)
 layout_mode = 1
 anchors_preset = 15

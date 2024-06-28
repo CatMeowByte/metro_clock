@@ -38,7 +38,7 @@ func popout(marker):
 		blink.tween_property(%Now, "modulate", Color(Color.WHITE, 0.5), 0.5)
 		blink.tween_property(%Now, "modulate", Color(Color.WHITE, 1.0), 0.5)
 
-		#await get_tree().create_timer(60).timeout
+		await get_tree().create_timer(60).timeout
 
 	# Pop out
 	pop = get_tree().create_tween()

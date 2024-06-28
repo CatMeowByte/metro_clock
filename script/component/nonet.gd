@@ -2,7 +2,7 @@ extends Control
 ## Ping to internet
 ## Ensure connected to internet regardless of network connection
 
-const API_URL = "https://dns.google/resolve?name=google.com"
+const API_URL = "https://gstatic.com/generate_204"
 
 @export var ping_delay: int = 10
 

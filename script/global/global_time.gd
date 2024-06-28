@@ -5,7 +5,7 @@ signal minute_updated
 signal second_updated
 signal marker_triggered
 
-var debug_unix_time: float = Time.get_unix_time_from_system()
+var debug_unix_time: float = Time.get_unix_time_from_datetime_dict(Time.get_datetime_dict_from_system())
 
 var t: Dictionary = {
 	"hour" : -1,
