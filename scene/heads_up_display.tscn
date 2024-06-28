@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cu4tnncdu8ojt" path="res://image/icon/triangle-custom.png" id="5_g2wpr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1n40u"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
 content_margin_bottom = 8.0
 bg_color = Color(1, 1, 1, 1)
 corner_detail = 1
@@ -20,9 +17,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 24
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
