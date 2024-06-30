@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://vkddnsyd0ku1"]
+[gd_scene load_steps=3 format=3 uid="uid://vkddnsyd0ku1"]
 
 [ext_resource type="FontFile" uid="uid://dsdiyhd717i2v" path="res://font/RobotoCondensed-Regular.ttf" id="1_yfuyq"]
+[ext_resource type="Script" path="res://script/component/theme_mode_dark_self_modulate.gd" id="2_wsgjm"]
 
 [node name="RunningTextLabel" type="Label"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
 theme_override_fonts/font = ExtResource("1_yfuyq")
 theme_override_font_sizes/font_size = 32
 text = "The quick brown fox jumps over the lazy dog."
 horizontal_alignment = 2
 vertical_alignment = 1
+script = ExtResource("2_wsgjm")
+color_light = Color(0.956863, 0.956863, 0.956863, 1)
+color_dark = Color(0.580392, 0.690196, 0.760784, 1)
