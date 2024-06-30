@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://45rjmsp0hq40"]
+[gd_scene load_steps=4 format=3 uid="uid://45rjmsp0hq40"]
 
 [ext_resource type="Script" path="res://script/scene/running_text.gd" id="1_lp7nd"]
 [ext_resource type="PackedScene" uid="uid://vkddnsyd0ku1" path="res://object/component/running_text_label.tscn" id="2_yurn2"]
+[ext_resource type="Script" path="res://script/component/theme_mode_dark_self_modulate.gd" id="3_ydny3"]
 
 [node name="RunningText" type="Control"]
 custom_minimum_size = Vector2(2.08165e-12, 64)
@@ -16,13 +17,16 @@ script = ExtResource("1_lp7nd")
 text_object = ExtResource("2_yurn2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
+self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_ydny3")
+color_light = Color(0.337255, 0.423529, 0.52549, 1)
+color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1

@@ -28,23 +28,41 @@ spacing_top = -15
 spacing_bottom = -40
 
 [node name="Clock" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("2_2qgcw")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-self_modulate = Color(0.580392, 0.690196, 0.760784, 1)
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_111sc")
 script = ExtResource("2_ikgey")
-color_light = Color(0.580392, 0.690196, 0.760784, 1)
+color_light = Color(0.956863, 0.956863, 0.956863, 1)
 color_dark = Color(0.2, 0.235294, 0.341176, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
 layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="Node2D" type="Node2D" parent="PanelContainer/CenterContainer/Control"]
+scale = Vector2(1.25, 1.25)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer/Control/Node2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="Hour" type="Label" parent="PanelContainer/HBoxContainer"]
+[node name="Hour" type="Label" parent="PanelContainer/CenterContainer/Control/Node2D/HBoxContainer"]
 unique_name_in_owner = true
 self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 2
@@ -57,15 +75,15 @@ script = ExtResource("2_ikgey")
 color_light = Color(0.101961, 0.109804, 0.172549, 1)
 color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/CenterContainer/Control/Node2D/HBoxContainer"]
 custom_minimum_size = Vector2(16, 2.08165e-12)
 layout_mode = 2
 
-[node name="Blinker" type="Control" parent="PanelContainer/HBoxContainer/CenterContainer"]
+[node name="Blinker" type="Control" parent="PanelContainer/CenterContainer/Control/Node2D/HBoxContainer/CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/Blinker"]
+[node name="Label3" type="Label" parent="PanelContainer/CenterContainer/Control/Node2D/HBoxContainer/CenterContainer/Blinker"]
 self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -88,10 +106,10 @@ script = ExtResource("2_ikgey")
 color_light = Color(0.101961, 0.109804, 0.172549, 1)
 color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="Node2D" type="Node2D" parent="PanelContainer/HBoxContainer/CenterContainer/Blinker"]
+[node name="Node2D" type="Node2D" parent="PanelContainer/CenterContainer/Control/Node2D/HBoxContainer/CenterContainer/Blinker"]
 rotation = 3.14159
 
-[node name="Label4" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/Blinker/Node2D"]
+[node name="Label4" type="Label" parent="PanelContainer/CenterContainer/Control/Node2D/HBoxContainer/CenterContainer/Blinker/Node2D"]
 self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -113,7 +131,7 @@ script = ExtResource("2_ikgey")
 color_light = Color(0.101961, 0.109804, 0.172549, 1)
 color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="Minute" type="Label" parent="PanelContainer/HBoxContainer"]
+[node name="Minute" type="Label" parent="PanelContainer/CenterContainer/Control/Node2D/HBoxContainer"]
 unique_name_in_owner = true
 self_modulate = Color(0.101961, 0.109804, 0.172549, 1)
 layout_mode = 2
@@ -126,7 +144,7 @@ script = ExtResource("2_ikgey")
 color_light = Color(0.101961, 0.109804, 0.172549, 1)
 color_dark = Color(0.956863, 0.956863, 0.956863, 1)
 
-[node name="Period" type="Label" parent="PanelContainer/HBoxContainer"]
+[node name="Period" type="Label" parent="PanelContainer/CenterContainer/Control/Node2D/HBoxContainer"]
 unique_name_in_owner = true
 self_modulate = Color(0.337255, 0.423529, 0.52549, 1)
 layout_mode = 2

@@ -175,7 +175,8 @@ func button_update():
 	button.set_value_no_signal(GlobalConfig.noise_duration)
 	#endregion
 
-	print("button updated")
+	if OS.has_feature("editor"):
+		print("button updated")
 
 
 func footer_pressed(text: String):
@@ -192,7 +193,8 @@ func _on_focus_exited():
 
 
 func _on_button_value_pressed(value):
-	print("button pressed value is ", value)
+	if OS.has_feature("editor"):
+		print("button pressed value is ", value)
 	setting_update()
 
 
